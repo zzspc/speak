@@ -1,0 +1,93 @@
+@charset "utf-8";
+html{color:#000}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+span,
+a{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,
+img,
+iframe{border:0}
+:focus{outline:0}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var{font-weight:normal;font-style:normal}
+ol,
+ul{list-style:none}
+li{list-style:none}
+caption,
+th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after{content:''}
+abbr,
+acronym{border:0;font-variant:normal}
+/* to preserve line-height and selector appearance */
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+/*input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit; vertical-align:middle;}*/
+/*to enable resizing for IE*/
+input,
+textarea,
+select{*font-size:100%}
+/*because legend doesn't inherit in IE */
+legend{color:#000}
+/*clear float*/
+.clearfix{zoom:1}
+.clearfix:after{display:block;clear:both;content:'\20'}
+.fleft{float:left}
+.fright{float:right}
+:not(input){
+    -webkit-user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+    -webkit-text-size-adjust:none;
+}
+
+
+html,body{height: 100%;}
+        .con-wrap{width: 6.4rem;background: #ecedf1;margin: 0 auto;min-height: 100%;}
+        .msg-item{padding: .2rem 1.1rem;width: 4.2rem;position: relative;min-height: 1.25rem;overflow: hidden;}
+        .msg-item .tx{width: .66rem;height: .66rem;border: 3px solid #fff;border-radius: .06rem;position: absolute;left: .2rem;top: .2rem;}
+        .msg-item .tx img{border-radius: .06rem;float: left;width: 100%;}
+        .msg-item .con{position: relative;float: left;}
+        .msg-item .con .txt{border: 1px solid #d2d2d2;color: #333;font-size: .3rem;padding: .15rem;line-height: .5rem;border-radius: .08rem;background: #fff;max-width: 4.2rem;min-height: .5rem;float: left;}
+        .msg-item .con em{height: .26rem;line-height: .26rem;float: right;border: 1px solid #d2d2d2;background: #dbdbdb;color: #8f8f8f;font-size: .2rem;border-radius: .08rem;margin-top: .15rem;padding: 0 .1rem;clear: both;}
+        .msg-item i{position: absolute;width: .13rem;height: .17rem;background: url(t1.png) no-repeat;background-size: .13rem;left: .98rem;top: .3rem;}
+
+        .msg-item.noself .tx{left: 5.5rem;border-color: #b3dcfd;}
+        .msg-item.noself .con{float: right;}
+        .msg-item.noself .con .txt{background: #b3dcfd;float: right;}
+        .msg-item.noself .con img{max-width: 4.24rem;}
+        .msg-item.noself i{background: url(./t2.png) no-repeat;background-size: .13rem;left: 5.29rem;}
