@@ -1,8 +1,7 @@
 # speak
 
 <h2>php5.3 以上</h2>
-<h2>#nginx配制</h2>
-
+<h2>config文件:/app/Config.php</h2>
 <h2>数据库：speak.sql</h2>
 <h2>管理地址：/index.php/admin/</h2>
 
