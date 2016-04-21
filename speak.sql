@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 04 月 21 日 03:37
+-- 生成日期: 2016 年 04 月 21 日 04:35
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.2.13
 
@@ -10700,25 +10700,6 @@ CREATE TABLE `uc_memberfields` (
 -- 导出表中的数据 `uc_memberfields`
 --
 
-INSERT INTO `uc_memberfields` (`uid`, `blacklist`) VALUES
-(1, ''),
-(2, ''),
-(3, ''),
-(31, ''),
-(32, ''),
-(33, ''),
-(2001, ''),
-(2002, ''),
-(2003, ''),
-(2004, ''),
-(2005, ''),
-(2006, ''),
-(2007, ''),
-(2008, ''),
-(2009, ''),
-(2010, ''),
-(2011, ''),
-(2012, '');
 
 -- --------------------------------------------------------
 
@@ -10742,7 +10723,7 @@ CREATE TABLE `uc_members` (
   PRIMARY KEY (`uid`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 导出表中的数据 `uc_members`
