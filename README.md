@@ -9,6 +9,7 @@
 ¹ÜÀíÔ±£ºadmin
 ÃÜÂë£º123456
 </h3>
+
 <pre>server {
         listen       80;
         server_name  speak.test.cn;
