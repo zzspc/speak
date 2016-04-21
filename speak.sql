@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 04 月 21 日 06:19
+-- 生成日期: 2016 年 04 月 21 日 06:42
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.2.13
 
@@ -109,7 +109,7 @@ INSERT INTO `plf_permissions` (`id`, `pid`, `name`, `desc`, `url`, `cmvalue`, `o
 (3, 0, '网站', '', '', '', 0),
 (5, 3, '用户类型管理', '管理用户类型', 'usertype', '列表:usertype_index\r\n添加:usertype_add\r\n编辑:usertype_edit\r\n删除:usertype_delete', 10),
 (6, 3, '菜单管理', '管理各级菜单', 'permission', '列表:permission_index\r\n添加:permission_add\r\n编辑:permission_edit\r\n删除:permission_delete', 10),
-(38, 3, '对话', '', 'speak', '列表:speak_index\r\n添加:speak_add\r\n编辑:speak_edit\r\n删除:speak_del', 2);
+(38, 3, '对话', '', 'speak', '列表:speak_index\r\n添加:speak_add\r\n编辑:speak_edit\r\n删除:speak_del\r\n查看聊天:speak_log\r\n添加聊天:speak_log_add\r\n编辑聊天:speak_log_edit\r\n删除聊天:speak_log_delete\r\n\r\n', 2);
 
 -- --------------------------------------------------------
 
@@ -3729,7 +3729,7 @@ CREATE TABLE `plf_speak` (
   `addtime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- 导出表中的数据 `plf_speak`
@@ -3740,7 +3740,9 @@ INSERT INTO `plf_speak` (`id`, `name`, `user_id`, `face1`, `face2`, `addtime`, `
 (2, 'asdf', 1, '/data/upload/article/201604/14611414292166.png', '/data/upload/article/201604/14611414327508.png', '2016-04-20 16:37:13', -1),
 (3, 'test', 1, '/data/upload/article/201604/14611414889725.jpg', '/data/upload/article/201604/14611414915958.jpg', '2016-04-20 16:38:12', 1),
 (4, '12343', 1, '', '', '2016-04-20 16:45:29', -1),
-(5, '', 1, '', '', '2016-04-20 17:28:57', -1);
+(5, '', 1, '', '', '2016-04-20 17:28:57', -1),
+(6, 'asdfasdf', 3, '/data/upload/article/201604/14612206451790.png', '/data/upload/article/201604/14612206478840.png', '2016-04-21 14:37:29', 1),
+(7, 'asdf', 4, '/data/upload/article/201604/14612209401912.png', '/data/upload/article/201604/14612209425083.png', '2016-04-21 14:42:23', 1);
 
 -- --------------------------------------------------------
 
@@ -3760,7 +3762,7 @@ CREATE TABLE `plf_speak_log` (
   `addtime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- 导出表中的数据 `plf_speak_log`
@@ -3770,7 +3772,10 @@ INSERT INTO `plf_speak_log` (`id`, `user_id`, `speak_id`, `is_self`, `content`, 
 (1, 1, 3, 1, 'asdfasdf', '/data/upload/article/201604/14611453845535.jpg', '2016-04-20 17:43:01', '2016-04-20 17:43:05', 1),
 (2, 1, 3, 1, '11111222', '', '2016-04-20 00:00:00', '2016-04-20 17:44:28', -1),
 (3, 1, 3, 2, 'asdfasdf', '', '2016-04-20 17:49:20', '2016-04-20 17:49:23', 1),
-(4, 1, 3, 1, '', '/data/upload/article/201604/14611457746923.jpg', '2016-04-20 17:49:32', '2016-04-20 17:49:36', 1);
+(5, 1, 6, 1, 'asd', '', '2016-04-21 14:38:44', '2016-04-21 14:38:58', 1),
+(4, 1, 3, 1, '', '/data/upload/article/201604/14611457746923.jpg', '2016-04-20 17:49:32', '2016-04-20 17:49:36', 1),
+(6, 4, 7, 1, '12343', '', '2016-04-21 14:42:30', '2016-04-21 14:42:31', 1),
+(7, 4, 7, 2, 'asdfasdfdsf', '', '2016-04-21 14:42:34', '2016-04-21 14:42:38', 1);
 
 -- --------------------------------------------------------
 
@@ -3871,7 +3876,8 @@ CREATE TABLE `plf_user` (
 --
 
 INSERT INTO `plf_user` (`user_id`, `type_id`, `username`, `zf_password`, `portrait`, `addtime`, `email`, `name`, `tel`, `qq`, `address`, `invite_userid`, `subsite_id`, `lastip`, `times`, `status`) VALUES
-(1, 2, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://bx.test.cn/data/upload/portrait/1/1-1.jpg', '2013-09-06 20:45:52', '373455742@qq.com', '管理员', '2222222ererer', '', '44444444ss', 0, 1, NULL, 0, 1);
+(1, 2, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://bx.test.cn/data/upload/portrait/1/1-1.jpg', '2013-09-06 20:45:52', '373455742@qq.com', '管理员', '2222222ererer', '', '44444444ss', 0, 1, '192.168.1.15', 0, 1),
+(4, 3, 'zzspc', '6a204bd89f3c8348afd5c77c717a097a', NULL, '2016-04-21 14:42:06', 'asdfasdfs@asdfasdfd.com', NULL, NULL, NULL, NULL, 0, 1, '192.168.1.15', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3928,7 +3934,7 @@ CREATE TABLE `plf_usertype` (
 INSERT INTO `plf_usertype` (`id`, `name`, `desc`, `addtime`, `is_admin`, `permission_id`) VALUES
 (2, '超级管理员', '全部权限的超级管理员', '0000-00-00 00:00:00', 1, 'ALL'),
 (1, '会员', '一般会员', '2014-10-24 11:21:53', 0, ''),
-(3, '会话管理员', '', '2015-05-19 09:42:48', 1, 'a:3:{s:4:"menu";a:1:{i:0;s:1:"3";}s:7:"submenu";a:1:{i:0;s:2:"38";}s:4:"func";a:4:{i:0;s:11:"speak_index";i:1;s:9:"speak_add";i:2;s:10:"speak_edit";i:3;s:9:"speak_del";}}');
+(3, '会话管理员', '', '2015-05-19 09:42:48', 1, 'a:3:{s:4:"menu";a:1:{i:0;s:1:"3";}s:7:"submenu";a:1:{i:0;s:2:"38";}s:4:"func";a:8:{i:0;s:11:"speak_index";i:1;s:9:"speak_add";i:2;s:10:"speak_edit";i:3;s:9:"speak_del";i:4;s:9:"speak_log";i:5;s:13:"speak_log_add";i:6;s:14:"speak_log_edit";i:7;s:16:"speak_log_delete";}}');
 
 -- --------------------------------------------------------
 
@@ -4165,7 +4171,8 @@ CREATE TABLE `uc_memberfields` (
 --
 
 INSERT INTO `uc_memberfields` (`uid`, `blacklist`) VALUES
-(3, '');
+(3, ''),
+(4, '');
 
 -- --------------------------------------------------------
 
@@ -4190,14 +4197,15 @@ CREATE TABLE `uc_members` (
   PRIMARY KEY (`uid`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- 导出表中的数据 `uc_members`
 --
 
 INSERT INTO `uc_members` (`uid`, `username`, `password`, `email`, `myid`, `myidkey`, `regip`, `regdate`, `lastloginip`, `lastlogintime`, `salt`, `secques`) VALUES
-(1, 'admin', '76f0bec15755a0a8528d32a1912a9ee4', '373455742@qq.com', '', '', '127.0.0.1', 1413372619, 0, 0, 'b83b43', '');
+(1, 'admin', '76f0bec15755a0a8528d32a1912a9ee4', '373455742@qq.com', '', '', '127.0.0.1', 1413372619, 0, 0, 'b83b43', ''),
+(4, 'zzspc', 'f590c29a926891b62606db068b08500b', 'asdfasdfs@asdfasdfd.com', '', '', '192.168.1.15', 1461220926, 0, 0, 'e359ef', '');
 
 -- --------------------------------------------------------
 
