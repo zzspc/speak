@@ -1,10 +1,10 @@
 # speak
 
-php 5.3 以上
-#nginx配制
+<h2>php5.3 以上</h2>
+<h2>#nginx配制</h2>
 
-数据库：speak.sql
-管理地址：/index.php/admin/
+<h2>数据库：speak.sql</h2>
+<h2>管理地址：/index.php/admin/</h2>
 server {
         listen       8000;
         server_name  speak.test.cn;
