@@ -5,8 +5,13 @@
 
 <h2>数据库：speak.sql</h2>
 <h2>管理地址：/index.php/admin/</h2>
-server {
-        listen       8000;
+
+<h3>
+管理员：admin
+密码：123456
+</h3>
+<pre>server {
+        listen       80;
         server_name  speak.test.cn;
         location / {
             root   D:/nginx_www/speak/public;
@@ -30,4 +35,4 @@ server {
         location ~ /\.ht {
             deny  all;
         }
-    }
+    }</pre>
